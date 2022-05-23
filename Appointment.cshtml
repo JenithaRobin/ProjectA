@@ -1,0 +1,105 @@
+﻿@model CMS.Models.Schedule
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{ }
+@using (Html.BeginForm("AppointmentSchedule", "Home", FormMethod.Post))
+{
+<body style="background-image: url('../Images/formbackground.gif'); background-size:cover">
+    <h1 style="background-image: url('../Images/formbackground.gif'); font-family: 'Times New Roman'"><center>Schedule your Appointment</center></h1>
+
+    <center>
+        <br />
+        <br />
+        <br />
+        <table style="background-color:lightblue" align="center" cellpadding="10" cellspacing="5">
+            <tr>
+                <td><b>PatientId:</b></td>
+                <td>@Html.TextBoxFor(m => m.Patientid)</td>
+            </tr>
+            <tr>
+                <td><b>Specilization :</b></td>
+
+                @*<td>@Html.TextBoxFor(m=>m.Specialization)</td>*@
+
+                <td>
+                    <select name="Specialization" onchange="test(this);">
+                        <option value="General">General</option>
+                        <option value="Internal Medicine">Internal Medicine</option>
+                        <option value="Pediatrics">Pediatrics</option>
+                        <option value="Orthopedics">Orthopedics</option>
+                        <option value="Ophthalmology">Ophthalmology</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><b>Doctor :</b> </td>
+                <td>
+                    @*<input type="text" id="doc" value="">*@
+                    @Html.TextBoxFor(m => m.Doctor)
+                </td>
+            </tr>
+            <tr>
+                <td><b>Visiting Date :</b></td>
+                <td>
+
+                    @*<label asp-for="VisitDate" class="control-label"></label>*@
+                    <input asp-for="VisitDate" type="date" class="form-control" />
+
+
+                </td>
+            </tr>
+            <tr>
+                <td><b>VisitingHours :</b></td>
+                <td>
+                    <Slot>
+                        @Html.RadioButtonFor(a => a.AppointmentTime, "10AM-11AM")10AM-11AM <br />
+                        @Html.RadioButtonFor(a => a.AppointmentTime, "11AM-12PM")11AM-12PM <br />
+                        @Html.RadioButtonFor(a => a.AppointmentTime, "6PM-7PM")6PM-7PM <br />
+                        @Html.RadioButtonFor(a => a.AppointmentTime, "7PM-8PM")7PM-8PM <br />
+                        @Html.RadioButtonFor(a => a.AppointmentTime, "8PM-9PM")8PM-9PM <br />
+                    </Slot>
+                </td>
+
+            </tr>
+
+
+
+
+        </table>
+
+    </center>
+    <br />
+    <br />
+    <center> <input type="submit" value="Create" class="btn btn-primary" /></center>
+
+
+    <center> <a asp-action="MainMenu">Go Back</a></center>
+
+
+    @*<p id="MyId"></p>
+
+        <script>
+            window.test = function (e) {
+
+
+                if (e.value == "General") {
+                    document.getElementById("doc").value = "Dr.Shri";
+                }
+                else if (e.value == "Internal Medicine") {
+                    document.getElementById("doc").value = "Dr.UshaRani";
+                }
+                else if (e.value == "Pediatrics") {
+                    document.getElementById("doc").value = "Dr.Pavithra";
+                }
+                else if (e.value == "Orthopedics") {
+                    document.getElementById("doc").value = "Dr.Janani";
+                }
+                else if (e.value == "Ophthalmology") {
+                    document.getElementById("doc").value = "Dr.Atharva";
+                }
+
+            }
+        </script>*@
+</body>
+        }

@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <a href="#"></a>
+</head>
+<body>
+    <header>
+        <table cellspacing="10" cellpadding="20">
+            <tr>
+                <nav style="background-color:mediumslateblue"class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light badge-primary border-bottom box-shadow mb-3">
+                    <div class="container">
+
+                        @*<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">CMS</a>*@
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between" style="align-content:center">
+                            <ul class="navbar-nav flex-grow-1">
+                                <img src="~/Images/Stone-Clinic-Logo (1).png" height="60" width="60" />
+
+                                <li class="nav-item">
+                                    <div> <a class="fa fa-fw fa-home" style="font-size:60px; color:whitesmoke" asp-area="" asp-controller="Home" asp-action="MainMenu"></a></div>
+
+                                </li>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;
+                                <li style="font-family:'Times New Roman', Times, serif;color:White;font-size:30px">STONE CLINIC</li>
+
+
+                                @*<li class="nav-item">
+
+            @using (Html.BeginForm("ADDdoctor", "Home", FormMethod.Post))
+            {
+
+
+                <input type="submit" value="Doctor" style="color:black;background-color:gainsboro;width:100px;height:40px;" />
+
+
+            }
+        </li>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+
+
+        <li class="nav-item">
+
+            @using (Html.BeginForm("ADDpatient", "Home", FormMethod.Post))
+            {
+
+                <input type="submit" value="Patient" style="color:black;background-color:gainsboro;color:black;width:100px;height:40px;" />
+
+            }
+
+        </li>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+
+        <li class="nav-item">
+
+
+            @using (Html.BeginForm("Appointment", "Home", FormMethod.Post))
+            {
+
+                <input type="submit" value="Appointment" style="color:black;background-color:gainsboro;color:black;width:100px;height:40px;" />
+
+            }
+
+        </li>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <li class="nav-item">
+            @using (Html.BeginForm("Display", "Home", FormMethod.Post))
+            {
+
+                <input type="submit" value="Cancel" style="color:black;background-color:gainsboro;color:black;width:100px;height:40px;" />
+
+            }
+        </li>*@
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <li class="nav-item">
+                                    <div> <a class="fa fa-sign-out" style="font-size:60px; color:whitesmoke" asp-area="" asp-controller="Home" asp-action="Index"></a></div>
+
+                                </li>
+
+                            </ul>
+                    </div>
+
+                    </div>
+
+                </nav>
+            </tr>
+        </table>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2022 - CMS - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

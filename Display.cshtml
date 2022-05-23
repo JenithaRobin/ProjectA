@@ -1,0 +1,64 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model IEnumerable<CMS.Models.Schedule>
+@{
+}
+<body style="background-image: url('../Images/formbackground.gif'); background-size:100%"></body>
+        
+<table style="background-color:lightblue" align="center" cellpadding="15" cellspacing="10">
+    <tr>
+
+        @*<img src="~/Images/cancel.gif" height="200" width="200" />*@
+        <h1><center>Cancel Appointment</center></h1>
+    </tr>
+    <tr>
+
+        <th>
+            @Html.DisplayName("PatientId")
+        </th>
+        <th>
+                @Html.DisplayName("Specialization")
+            </th>
+            <th>
+                @Html.DisplayName("Doctor")
+            </th>
+        <th>
+            @Html.DisplayName("VisitDate")
+        </th>
+        @*<th>
+                @Html.DisplayName("VisitingHours")
+            </th>*@
+    </tr>
+    <tbody>
+        
+         @foreach (var d in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => d.Patientid)
+            </td>
+            <td>
+
+                @Html.DisplayFor(modelItem => d.Specialization)
+            </td>
+            <td>
+
+                @Html.DisplayFor(modelItem => d.Doctor)
+            </td>
+            <td>
+
+                @Html.DisplayFor(modelItem => d.VisitDate)
+            </td>
+            @*<td>
+
+            @Html.DisplayFor(modelItem => d.AppointmentTime)
+             </td>*@
+            <td>
+                <a asp-action="Cancel" asp-route-id="@d.Patientid"><input type="button" value="Cancel" class="btn btn-danger" /></a>
+            </td>
+        </tr>
+        }
+    </tbody>
+
+</table> 

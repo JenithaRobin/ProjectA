@@ -1,0 +1,155 @@
+﻿@*
+
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+
+}
+
+
+<head>
+    
+    <table style="align-content:center" cellpadding="10" cellspacing="10">
+        <tr style="column-span:4"></tr>
+        <tr>
+            
+            <td>
+
+                @using (Html.BeginForm("ADDdoctor", "Home", FormMethod.Post))
+                {
+                    <img src="../Images/doctor.png" style="width:150px;height:150px"><input type="submit" value="Add Doctor" style="color:black;background-color:lightblue;width:150px;height:40px;" />
+
+
+                }
+            </td>
+            <td>
+
+                @using (Html.BeginForm("ADDpatient", "Home", FormMethod.Post))
+                {
+                    <img src="../Images/pat.png" style="width:150px;height:150px">
+                    <input type="submit" value="Add patient" style="color:black;background-color:lightblue;color:black;width:150px;height:40px;" />
+
+                }
+            </td>
+            <td>
+
+                @using (Html.BeginForm("Appointment", "Home", FormMethod.Post))
+                {
+                    <img src="../Images/fix.png" style="width:150px;height:150px">
+                    <input type="submit" value="Fix Appointment" style="color:black;background-color:lightblue;color:black;width:150px;height:40px;" />
+
+                }
+            </td>
+            <td>
+
+                @using (Html.BeginForm("Display", "Home", FormMethod.Post))
+                {
+                    <img src="../Images/cancel.png" style="width:150px;height:150px">
+                    <input type="submit" value="Cancel Appointment" style= "color:black;background-color:lightblue;color:black;width:150px;height:40px;" />
+
+                }
+            </td>
+        </tr>
+    </table>
+</head>
+<body style="background-image: url('../Images/Mainmenu.gif');background-size:cover">
+
+    <table style="background-color:deepskyblue" align="center">
+        <tr>
+
+            @*<tr height="200">
+                <td background="D:\DOWNLOAD\cattle.jpg" width="25%">
+                    <h1 align="center"><a href="https://en.wikipedia.org/wiki/Cattle" />Cattle</h1>
+                </td>
+                <td background="D:\DOWNLOAD\birds.jpg">
+                    <h1 align="center">Birds</h1>
+                </td>
+                <td background="D:\DOWNLOAD\Animalacc.jpg">
+                    <h1 align="center"><a href="https://en.wikipedia.org/wiki/Animal_attack" />Accident/Injury</h1>
+                </td>
+                <td bgcolor="white">
+                    <h1 align="center"><a href="https://en.wikipedia.org/wiki/Cruelty_to_animals" />Complaint</h1>
+                </td>
+            </tr>*@
+            <p1 style="font-family: Arial Verdana Helvetica; color:white ">
+                <h1> CLINIC RULES & REGULATIONS</h1>
+
+                <b>
+                    You are responsible for the following hospital rules and regulations affecting patient care and conduct.
+                    <br />
+                    <br />
+
+                    <h3>SMOKING</h3>
+
+                    Sullivan County Community Hospital is a smoke free facility. If this is a problem for you, please discuss your options with your physician.
+                    <br />
+                    <br />
+                    <h3>RESPECT AND CONSIDERATION</h3>
+
+                    You are responsible for being considerate of the rights of other patients and hospital personnel. This includes assisting in the control of noise and the number of visitors in your room. You are responsible for being respectful of the property of others and of the hospital.
+                    <br />
+                    <br />
+                    <h3>NOISE REDUCTION</h3>
+                    As a factor in your comfort and care, we at Sullivan County Community Hospital are concerned about the level of noise in our facility. Excessive noise levels affect rest which can have a big impact on recovery. In fact, studies have shown that increased noise levels can have a direct impact on hospital length of stay and increased stress levels.
+                    <br />
+                    <br />
+
+                    In order to help us reduce noise levels in our facility we ask that you:&nbsp;
+
+                    <br />
+                    <br />
+
+                    <ul>
+                        ->Limit visitors to two per patient at one time.
+                        <br />
+                        ->Maintain low voice tones in all areas of the hospital.
+                        <br />
+                        ->Adhere to visiting hours.
+                        <br />
+                        ->Restrict calls to patient rooms after 9 p.m.
+                        <br />
+                        ->Avoid visiting in hallways in patient care areas.
+                        <br />
+                        ->We hope these measures will help reduce noise in patient care areas. If you notice an area for improvement regarding noise levels in the hospital, please notify the nursing staff, Department Director or Coordinator. We thank you for your understanding and cooperation.
+                    </ul>
+                </b>
+            </p1>
+        </tr>
+        @*<tr>
+            <td>
+                <h1 class="fa-brands fa-facebook" style="font-size:60px" align="center"><a href="https://www.facebook.com/" /></h1>
+            </td>
+        </tr>*@
+    </table>
+</body>
+@Html.Raw(TempData["msg"])
+@*<tr>
+            <h1>Please fill the Manditory Details*</h1>
+            @using (Html.BeginForm("ADDdoctor", "Home", FormMethod.Post))
+            {
+                <p> <b>Doctor Details*-</b><input type="submit" value="Add Doctor" /></p>
+
+            }
+        </tr>
+        <tr>
+            @using (Html.BeginForm("ADDpatient", "Home", FormMethod.Post))
+            {
+                <p><b> Patient Details*-</b><input type="submit" value="Add Patient" /></p>
+
+            }
+        </tr>
+        <tr>
+            @using (Html.BeginForm("Appo", "Home", FormMethod.Post))
+            {
+                <p><b>Please fix your Appointment*-</b><input type="submit" value="Schedule Appointment" /></p>
+
+            }
+    </tr>
+        <tr>
+            @using (Html.BeginForm("Display", "Home", FormMethod.Post))
+            {
+                <p><b>To Cancel your Appointent*-</b><input type="submit" value="Cancel" /></p>
+
+            }
+            </tr>
+    </table>*@

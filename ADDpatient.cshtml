@@ -1,0 +1,67 @@
+﻿@model CMS.Models.Patient
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@using (Html.BeginForm("Patientp", "Home", FormMethod.Post))
+{
+    <body style="background-image: url('../Images/formbackground.gif'); background-size: cover">
+
+    </body>
+    @*<img src="~/Images/Stone-Clinic-Logo (1).png" style="width:100px;height:100px" />*@
+    <center><h1 style="background-image: url('../Images/formbackground.gif');font-family:'Times New Roman', Times, serif">Please Fill the Patient Details</h1></center>
+    <br />
+    <br />
+    <br />
+    <center>
+        <table style="background-color:lightblue" align="center" cellpadding="15" cellspacing="10">
+            <tr>
+
+                <img src="~/Images/pat.gif" height="200" width="200" />
+            <tr>
+                <td><b>FirstName :</b></td>
+                <td>@Html.TextBoxFor(m => m.FirstName)</td>
+            </tr>
+            <tr>
+                <td><b>LastName :</b></td>
+                <td>@Html.TextBoxFor(m => m.LastName)</td>
+            </tr>
+            <tr>
+                <td><b>Sex :</b> </td>
+                <td>
+                    <b>
+                        <i>
+                            @Html.RadioButtonFor(m => m.Sex, "M")M
+                            @Html.RadioButtonFor(m => m.Sex, "F")F
+                            @Html.RadioButtonFor(m => m.Sex, "T")T
+                        </i>
+                    </b>
+                </td>
+            </tr>
+            <tr>
+                <td><b>Age :</b> </td>
+                <td>@Html.TextBoxFor(a => a.Age)</td>
+            </tr>
+            </tr>
+            <tr>
+                <td><b>DateofBirth :</b> </td>
+                <td><input asp-for="DateofBirth" type="date" class="form-control" /></td>
+
+            </tr>
+
+
+
+
+        </table>
+
+    
+
+     <input type="submit" value="Create" class="btn btn-primary" />
+    <div>
+        <br />
+
+        <left> <a asp-action="MainMenu">Go Back</a>
+    </div>
+   </center>
+}

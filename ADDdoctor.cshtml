@@ -1,0 +1,89 @@
+﻿@model CMS.Models.Doctor
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+   
+}
+
+@using (Html.BeginForm("DoctorVaithi", "Home", FormMethod.Post))
+{
+    <body style="background-image: url('../Images/formbackground.gif ') ; background-size: cover">
+
+    </body>
+    <center><h1 style="background-image: url('../Images/formbackground.gif');font-family:'Times New Roman', Times, serif">Please Fill the Doctor Details</h1></center>
+    <br />
+    <br />
+    <br />
+    <center>
+        <table  style="background-color:lightblue" align="center" cellpadding="10" cellspacing="5">
+            <tr>
+
+                <img src="~/Images/doctor.gif"  height="200" width="200"/>
+            <tr>
+                <td><b>FirstName :</b></td>
+                <td>@Html.TextBoxFor(m => m.FirstName)</td>
+            </tr>
+            <tr>
+                <td><b>LastName :</b></td>
+                <td>@Html.TextBoxFor(m => m.LastName)</td>
+            </tr>
+            <tr>
+                <td><b>Sex :</b> </td>
+                <td>
+                    <b>
+                        <i>
+                            @Html.RadioButtonFor(m => m.Sex, "M")M
+                            @Html.RadioButtonFor(m => m.Sex, "F")F
+                            @Html.RadioButtonFor(m => m.Sex, "T")T
+                        </i>
+                    </b>
+
+                </td>
+            </tr>
+            <tr>
+                <td><b>Specialization :</b></td>
+                <td>
+                    <b>
+                        <i>
+
+                            @Html.RadioButtonFor(m => m.Specialization, "General")GeneralSurgeon <br />
+                            @Html.RadioButtonFor(m => m.Specialization, "Internal Medicine")Internal Medicine <br />
+                            @Html.RadioButtonFor(m => m.Specialization, "Pediatrics")Pediatrics <br />
+                            @Html.RadioButtonFor(m => m.Specialization, "Orthopedics")Orthopedics <br />
+                            @Html.RadioButtonFor(m => m.Specialization, "Ophthalmology")Ophthalmology <br />
+
+                        </i>
+                    </b>
+                </td>
+            </tr>
+            <tr>
+                <td><b>VisitingHours :</b></td>
+                <td>
+                    <b>
+                        <i>
+                            @Html.RadioButtonFor(m => m.VisitingHours, "10AM-11AM")10AM-11AM <br />
+                            @Html.RadioButtonFor(m => m.VisitingHours, "11AM-12PM")11AM-12PM <br />
+                            @Html.RadioButtonFor(m => m.VisitingHours, "6PM-7PM")6PM-7PM <br />
+                            @Html.RadioButtonFor(m => m.VisitingHours, "7PM-8PM")7PM-8PM <br />
+                            @Html.RadioButtonFor(m => m.VisitingHours, "8PM-9PM")8PM-9PM <br />
+
+                        </i>
+                    </b>
+                </td>
+
+            </tr>
+
+
+
+
+        </table>
+
+    </center>
+
+    <center><input type="submit" value="Create" class="btn btn-primary" /></center>
+    <div>
+        <br />
+
+     <center><a asp-action="MainMenu">Go Back</a></center>
+    </div>}

@@ -1,0 +1,44 @@
+﻿
+
+@model CMS.Models.Login
+@{
+    Layout = null;
+    ViewData["Title"] = "Home Page";
+}
+@using (Html.BeginForm("ULogin", "Home", FormMethod.Post))
+{
+ 
+    <center>
+        <img src="~/Images/Stone-Clinic-Logo (1).png" style="width:100px;height:100px" />
+    </center>
+    <head>
+        @*<img src="~/Images/hospital.gif"style="width:100px;height:80px;" />/*@
+        <title></title>
+
+    </head>
+
+    <body style="background-image: url('../Images/frontbackground.gif'); background-size:100%;background-position:center" >
+        
+        <table align="center">
+            <thead><center><b><h2 style="font-family:Roboto;color:whitesmoke;font-size:2.5em;";>Login</h2></b></center></thead>
+            <tr>
+                <td ><b>UserName:</b></td>
+                <td >@Html.TextBoxFor(l => l.UserName ) </td>
+                <td>@Html.ValidationMessageFor(l => l.UserName)</td>
+            </tr>
+            <tr>
+                <td><b>Password:</b></td>
+                <td>@Html.PasswordFor(p => p.Password)</td>
+            </tr>
+
+            <br />
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Login" style="background-color:lawngreen;color:white;width:150px;height:40px;" /></td>
+            </tr>
+
+        </table>
+    </body>
+ 
+}
+
