@@ -1,0 +1,82 @@
+use Clinic 
+go
+
+Create table Doctor(Doctorid int identity(101,1), FirstName varchar(30), LastName varchar(30),Sex varchar(8), Specialization varchar(30), VisitingHours varchar(10))
+
+go
+create proc UserLogin
+@Username varchar(20),
+@Password varchar(10)
+as
+select*from Ulogin where UserName like @Username and P@ssword=@Password
+insert into Ulogin(UserName,FirstName,LastName,P@ssword)values('Admin123','Jenitha','Robin','Password')
+select * from Ulogin
+select * from Doctor
+go
+
+create proc AddDoc
+@fname varchar(10),
+@lname varchar(10),
+@sex varchar(8),
+@special varchar(30),
+@visithrs varchar(10)
+as
+insert into Doctor(FirstName,LastName,Sex,Specialization,VisitingHours)
+values(@fname,@lname,@sex,@special,@visithrs)
+
+
+
+create table Patient
+(
+PatientID int identity(1,1),
+FirstName  varchar(25),
+LastName varchar(25),
+Sex varchar(8),
+Age int,
+DateofBirth varchar(10)
+)
+select * from Patient
+go
+
+create proc AddPat
+@fname varchar(10),
+@lname varchar(10),
+@sex varchar(8),
+@age int,
+@dob varchar(10)
+as
+insert into Patient(FirstName,LastName,Sex,Age,DateofBirth)
+values(@fname,@lname,@sex,@age,@dob)
+
+create table Schedule
+(
+PatientId int identity(1,1),
+Specialization  varchar(30),
+Doctor varchar(20),
+VisitDate varchar(30),
+AppointmentTime varchar(10)
+)
+select * from Schedule
+
+go
+
+create proc ProSchedule
+@spec varchar(30),
+@doc varchar(30),
+@vis varchar(30),
+@apnt varchar(10)
+as
+insert into Schedule(Specialization,Doctor,VisitDate,AppointmentTime)
+values(@spec,@doc,@vis,@apnt)
+go
+
+create proc Deleschd
+@id int
+as
+delete Schedule where PatientID = @id
+go
+
+create proc AppointmentDelete
+as 
+select PatientId,Specialization,Doctor,VisitDate
+from Schedule
